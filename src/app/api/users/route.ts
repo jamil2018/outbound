@@ -1,17 +1,18 @@
 import { apiResponse } from "@/utils/httpUtils";
 import prisma from "@/config/dbClient";
-
-interface Data {
-  name: String | null;
-  email: String;
-  id: Number;
-}
+import { User } from "@/models/UserModel";
 
 export async function GET() {
   try {
-    const data: Data[] = await prisma.user.findMany();
+    const data: User[] = await prisma.user.findMany();
     return apiResponse(data, 200);
   } catch (error) {
     return apiResponse(error, 500);
   }
 }
+
+export async function POST() {}
+
+export async function DELETE() {}
+
+export async function PUT() {}
