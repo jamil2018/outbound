@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { User } from "@/models/UserModel";
 import { DataTable } from "../../../components/ui/data-table";
 import { columns } from "./columns";
@@ -11,7 +10,7 @@ async function getUsers(): Promise<User[]> {
   return res.json();
 }
 
-export default async function Home() {
+export default async function Users() {
   const data = await getUsers();
   return (
     <>
