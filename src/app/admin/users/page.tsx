@@ -1,10 +1,11 @@
 import { User } from "@/models/UserModel";
 import { DataTable } from "../../../components/ui/data-table";
 import { columns } from "./columns";
+import { GET } from "@/app/api/users/route";
 
 export default async function Users() {
   async function getUsers(): Promise<User[]> {
-    const res = await fetch(`${process.env.BASE_URL}/api/users`);
+    const res = await GET();
     if (!res.ok) {
       console.log(res);
     }
